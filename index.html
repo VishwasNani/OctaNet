@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Landing Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to Our Tourism</h1>
+    <p>Delight your soul with our exiting experiences!</p>
+    <div class="buttons">
+        <button onclick="showLogin()">Login</button>
+        <button onclick="showSignup()">Sign Up</button>
+    </div>
+    <div id="loginForm" style="display:none;">
+        <h2>Login</h2>
+        <form>
+            <input type="email" placeholder="Email" required>
+            <input type="password" id="pass1" placeholder="Password" required>
+            <button type="submit" onclick="submit1()">Login</button>
+        </form>
+    </div>
+    <div id="signupForm" style="display:none;">
+        <h2>Sign Up</h2>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" id="pass2" placeholder="Password" required>
+            <button type="submit" onclick="submit2()">Sign Up</button>
+        </form>
+    </div>
+</div>
+<script>
+    function showLogin() {
+        document.getElementById("loginForm").style.display="block" ;
+        document.getElementById("signupForm").style.display="none" ;
+    }
+    function showSignup() {
+        document.getElementById("signupForm").style.display = "block";
+        document.getElementById("loginForm").style.display = "none";
+    }
+    function submit1(){
+        var  pass=document.getElementById("pass1").value;
+        if(pass.length<8)
+        alert("enter correct password");
+    }
+    function submit2(){
+        var pass2=document.getElementsById("pass2").value;
+        if(pass2.length<6)
+        alert("enter password with more than 8 characters:");
+    }
+</script>
+</body>
+</html>
